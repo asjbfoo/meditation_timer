@@ -1,0 +1,22 @@
+button[id$="Segment"]{
+    border-radius: 15%;
+}
+div#timerForm{
+    width: 500px;
+    position: absolute;
+	top:0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	
+	margin: auto; 
+}
+#timeRemainingDisplay{
+	text-align: center;
+}
+.segmentMinutes{
+	float: left;
+}
+.segmentSeconds{
+	float: right;
+}

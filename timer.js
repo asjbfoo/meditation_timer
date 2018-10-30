@@ -10,16 +10,25 @@ function segment(newSegmentMinutes = 0, newSegmentSeconds = 0, newSegmentSound =
 function addSegmentToPage(segmentToAdd) {
     let segmentNodes = document.querySelectorAll("[id^=meditationSegment]");
     let segmentArray = Array.from(segmentNodes);
+
     let segmentDiv = document.createElement("div");
     segmentDiv.setAttribute("id", "meditationSegment"+(segmentArray.length+1));
-    segmentDiv.appendChild(document.createTextNode("Minutes: "));
+    let segmentMinutesSpan = document.createElement("span");
+    segmentMinutesSpan.setAttribute("class", "segmentMinutes");
+    segmentMinutesSpan.appendChild(document.createTextNode("Minutes: "));
     let minutesInput = document.createElement("input");
     minutesInput.setAttribute("id","segmentMinutes"+(segmentArray.length+1));
-    segmentDiv.appendChild(minutesInput);
-    segmentDiv.appendChild(document.createTextNode("Seconds: "));
+    segmentMinutesSpan.appendChild(minutesInput);
+    segmentDiv.appendChild(segmentMinutesSpan);
+
+    let segmentSecondsSpan = document.createElement("span");
+    segmentSecondsSpan.appendChild(document.createTextNode("Seconds: "));
+    segmentSecondsSpan.setAttribute("class", "segmentSeconds");
     let secondsInput = document.createElement("input");
     secondsInput.setAttribute("id","segmentSeconds"+(segmentArray.length+1));
-    segmentDiv.appendChild(secondsInput);
+    segmentSecondsSpan.appendChild(secondsInput);
+    segmentDiv.appendChild(segmentSecondsSpan);
+
     let segmentListNode = document.getElementById("segmentsList");
     let lastSegment = segmentArray[segmentArray.length-1];
     segmentListNode.insertBefore(segmentDiv, lastSegment.nextSibling);
