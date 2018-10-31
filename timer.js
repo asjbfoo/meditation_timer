@@ -82,8 +82,8 @@ function countdown(minutes, seconds, audio, segmentNumber) {
 }
 
 function startSegment(segmentNumber){
-    let segmentMinutes = document.getElementById("segmentMinutes"+segmentNumber).value ? document.getElementById("segmentMinutes"+segmentNumber).value : 0;
-    let segmentSeconds = document.getElementById("segmentSeconds"+segmentNumber).value ? document.getElementById("segmentSeconds"+segmentNumber).value : 0;
+    let segmentMinutes = document.getElementById("segmentMinutes"+segmentNumber).value ? parseInt(document.getElementById("segmentMinutes"+segmentNumber).value) : 0;
+    let segmentSeconds = document.getElementById("segmentSeconds"+segmentNumber).value ? parseInt(document.getElementById("segmentSeconds"+segmentNumber).value) : 0;
     let segmentAudio = "370507__craigmaloney__bell.wav";
     countdown(segmentMinutes, segmentSeconds, segmentAudio, segmentNumber);
 }
